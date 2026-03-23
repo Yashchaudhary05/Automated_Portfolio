@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build & Coverage
+coverage/
+dist/
+build/
+.nyc_output/
+
+# Environment
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.tar
+
+# Logs
+*.log
+npm-debug.log*
+
+# Portfolio repo clone (reference only)
+portfolio-repo/

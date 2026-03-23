@@ -1,0 +1,16 @@
+---
+# ── Deployment Variables ─────────────────────────────────
+# Configure these values for your environment
+
+# Docker image settings
+docker_image: "yashchaudhary05/devops-pipeline-app"
+docker_tag: "latest"
+
+# Container settings
+container_name: "devops-pipeline-app"
+container_port: 3000
+host_port: 3000
+
+# Application settings
+node_env: "production"
+app_version: "1.0.0"
