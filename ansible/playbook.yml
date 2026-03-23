@@ -11,17 +11,24 @@
 
   tasks:
     # ── Pre-deployment checks ────────────────────────────
-    - name: Ensure Docker is installed
+    - name: Check if Docker is already installed
+      ansible.builtin.command: docker --version
+      register: docker_check
+      changed_when: false
+      failed_when: false
+
+    - name: Install Docker if not present
       ansible.builtin.package:
         name: docker.io
         state: present
-      when: ansible_os_family == "Debian"
+      when: ansible_os_family == "Debian" and docker_check.rc != 0
 
     - name: Ensure Docker service is running
       ansible.builtin.service:
         name: docker
         state: started
         enabled: true
+      when: docker_check.rc != 0
 
     # ── Pull latest image ────────────────────────────────
     - name: Pull latest Docker image
