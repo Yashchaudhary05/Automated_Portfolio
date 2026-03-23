@@ -3,7 +3,7 @@
 # Configure these values for your environment
 
 # Docker image settings
-docker_image: "yashchaudhary05/devops-pipeline-app"
+docker_image: "nightfurydevops/devops-pipeline-app"
 docker_tag: "latest"
 
 # Container settings
